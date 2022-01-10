@@ -2165,7 +2165,119 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Company'
+                type: object
+                properties:
+                  status_code:
+                    type: integer
+                  status:
+                    type: string
+                  service:
+                    type: string
+                  resource:
+                    type: string
+                  operation:
+                    type: string
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Company'
+                  '':
+                    type: string
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status_code:
+                    type: integer
+                  error:
+                    type: string
+                  message:
+                    type: string
+                  type_message:
+                    type: string
+                  detail:
+                    type:
+                      - string
+                      - object
+                  ref:
+                    type: string
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status_code:
+                    type: integer
+                  error:
+                    type: string
+                  type_message:
+                    type: string
+                  message:
+                    type: string
+                  detail:
+                    type: string
+                  ref:
+                    type: string
+        '402':
+          description: Payment Required
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status_code:
+                    type: integer
+                  error:
+                    type: string
+                  type_message:
+                    type: string
+                  message:
+                    type: string
+                  ref:
+                    type: string
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status_code:
+                    type: integer
+                  error:
+                    type: string
+                  type_message:
+                    type: string
+                  message:
+                    type: string
+                  detail:
+                    type: string
+                  ref:
+                    type: string
+        '422':
+          description: Unprocessable Entity (WebDAV)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status_code:
+                    type: integer
+                  error:
+                    type: string
+                  type_message:
+                    type: string
+                  message:
+                    type: string
+                  detail:
+                    type: string
+                  ref:
+                    type: string
       operationId: get-crm-companies
       parameters:
         - schema:
