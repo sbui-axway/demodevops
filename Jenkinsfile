@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('lint') {
       steps {
-        sh 'spectral -h'
+        sh 'lint crm.openapi.yml'
       }
     }
 
