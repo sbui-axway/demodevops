@@ -9,10 +9,9 @@ pipeline {
     stage('validate') {
       agent {
                 docker { image 'stoplight/spectral' }
-            }
+      }
       steps {
-        sh 'npm install  spectral'
-        sh 'spectral --h'
+        sh 'spectral lint crm.openapi.yml'
       }
     }
 
