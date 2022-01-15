@@ -2,6 +2,7 @@ pipeline {
   agent {
     docker {
       image 'stoplight/spectral'
+      args 'entrypoint: [""]'
     }
 
   }
