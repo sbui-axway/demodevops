@@ -8,7 +8,8 @@ pipeline {
   stages {
     stage('lint') {
       steps {
-        sh 'npm install -g spectral'
+        sh '''npm config set unsafe-perm true
+npm install -g --unsafe-perm spectral'''
         sh 'spectral --h'
       }
     }
