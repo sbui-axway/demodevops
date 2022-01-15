@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('lint') {
       steps {
-        sh 'npm install -g spectral'
+        sh 'npm install  spectral'
         sh 'spectral --h'
       }
     }
