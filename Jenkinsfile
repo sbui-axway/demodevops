@@ -6,7 +6,10 @@ pipeline {
 
   }
   stages {
-    stage('lint') {
+    stage('validate') {
+      agent {
+                docker { image 'stoplight/spectral' }
+            }
       steps {
         sh 'npm install  spectral'
         sh 'spectral --h'
