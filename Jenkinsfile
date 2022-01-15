@@ -6,9 +6,10 @@ pipeline {
 
   }
   stages {
-    stage('Test') {
+    stage('lint') {
       steps {
-        sh 'node --version'
+        sh 'npm install -g spectral'
+        sh 'spectral --h'
       }
     }
 
