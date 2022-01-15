@@ -1,14 +1,13 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:16.13.1-alpine'
-    }
 
-  }
   stages {
     stage('validate') {
+      agent {
+        docker {
+          image 'spectral:latest'
+        }
+      }
       steps {
-        sh 'yarn global add @stoplight/spectral-cli'
         sh 'spectral lint crm.openapi.yml'
       }
     }
